@@ -1,4 +1,12 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbxpb3l4QYKgAAeD2TqAuZvADVzPRC1qfkdN07qwGwD2-Pwa3UsuqNWeWvJkmAH10ypQ/exec";
+const API_URL = (() => {
+  const url = import.meta.env.VITE_API_URL;
+  if (!url) {
+    throw new Error(
+      "VITE_API_URL environment variable is not defined. Add VITE_API_URL to your .env file."
+    );
+  }
+  return url;
+})();
 
 async function request(url, options = {}) {
   const response = await fetch(url, options);

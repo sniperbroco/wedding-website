@@ -15,7 +15,7 @@ export const wedding = {
   theme: "Burgundy and Black Elegant",
   schedule: [
     { time: "3:00 PM", title: "Civil Wedding Ceremony", description: "An intimate celebration of our union." },
-    { time: "4:00 PM", title: "Photos & Celebration", description: "A few moments to celebrate with our loved ones." },
+    { time: "4:00 PM", title: "Reception", description: "A few moments to celebrate with our loved ones." },
   ],
   message: "With grateful hearts, we invite you to celebrate this intimate chapter of our lives with us.",
   quote: "Two lives, one promise, and a lifetime to go.",

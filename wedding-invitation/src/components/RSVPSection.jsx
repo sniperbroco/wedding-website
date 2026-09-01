@@ -36,11 +36,6 @@ export default function RSVPSection({ invitation }) {
       return;
     }
 
-    if (!email.trim()) {
-      setState({ status: "error", message: "Please provide your email address." });
-      return;
-    }
-
     try {
       await submitRsvp({
         inviteId: invitation.inviteId,
@@ -137,7 +132,6 @@ export default function RSVPSection({ invitation }) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              required
             />
           </label>
           <label>

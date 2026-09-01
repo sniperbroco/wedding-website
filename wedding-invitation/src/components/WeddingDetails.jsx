@@ -17,7 +17,7 @@ export default function WeddingDetails({ wedding }) {
         </article>
         <article className="detail-card">
           <span className="detail-number">02</span>
-          <h3>Ceremony</h3>
+          <h3>Reception</h3>
           <p>{wedding.venue}</p>
           <span>{wedding.address}</span>
         </article>
