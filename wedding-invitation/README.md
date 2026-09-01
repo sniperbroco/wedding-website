@@ -1,16 +1,55 @@
-# React + Vite
+# Wedding Invitation Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite frontend for the wedding invitation and RSVP tracker.
 
-Currently, two official plugins are available:
+## Current scope
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- `/invite/INV001` — personalized wedding invitation + RSVP
+- `/invite/INV002` — sample invitation
+- `/invite/INV003` — sample invitation
+- `/invite/INV004` — sample invitation
+- `/admin` — RSVP tracker
 
-## React Compiler
+## Current data layer
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The frontend currently uses `src/services/weddingApi.js` with `localStorage` as a temporary mock backend.
 
-## Expanding the ESLint configuration
+This is intentional. The UI can be built and tested before connecting Google Apps Script + Google Sheets.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+## Later: Google Apps Script
+
+Replace the functions in `src/services/weddingApi.js` with `fetch()` calls to the Google Apps Script web app.
+
+Suggested operations:
+
+- `getInvitation(inviteId)`
+- `submitRsvp(payload)`
+- `getRsvps()`
+
+Do not place Google credentials or private Sheet access tokens in the frontend.
+
+## Customization
+
+Main wedding content:
+- `src/data/wedding.js`
+
+Main invitation examples:
+- `src/data/wedding.js`
+
+Frontend styling:
+- `src/index.css`
+
+Gallery images are currently visual placeholders. Replace the gallery cards with the final wedding photos when available.
