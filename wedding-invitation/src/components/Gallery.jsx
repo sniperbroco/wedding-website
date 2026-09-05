@@ -30,7 +30,7 @@ export default function Gallery() {
   return (
     <section className="section gallery-section" id="gallery">
       <SectionHeading
-        eyebrow=""
+        eyebrow="How it began"
         title="Our Story"
         description={`Long before they dreamed of forever, they were just two teenagers who happened to meet during a Senior High School Drum and Lyre Corps competition.
 

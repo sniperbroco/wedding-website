@@ -134,8 +134,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero h1 {
   margin-top: 4rem;
   margin-bottom: 8rem;
-  display: grid;
-  gap: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1rem;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(10rem, 12vw, 30rem);
   font-weight: 500;
@@ -144,6 +147,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero h1 span {
   font-family: "Parfumerie Script Decorative", sans-serif;
+}
+
+.hero h1 #and {
+  font-family: "Cormorant Garamond", serif;
+  font-size: .3em;
+  margin: .2em 0;
+  font-style: italic;
+  color: #d8adb7;
 }
 
 .hero h1 small {
@@ -702,7 +713,8 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
 @media (max-width: 600px) {
   .navbar { padding: 18px 5vw; }
   .hero::before { inset: 4%; }
-  .hero h1 { font-size: clamp(6rem, 30vw, 14rem); margin-top:4rem; margin-bottom: 8rem; }
+  .hero h1 { font-size: clamp(6rem, 30vw, 14rem); margin-top:4rem; margin-bottom: 8rem; flex-direction: column; align-items: center; gap: 0; }
+  .hero h1 #and { font-size: .22em; margin: 0.2rem; }
   .section { padding: 90px 5vw; }
   .section-heading { margin-bottom: 56px; }
   .section-heading p { font-size: .85rem; }
