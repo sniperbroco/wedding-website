@@ -6,9 +6,7 @@ export default function Hero({ wedding, invitation }) {
         <p className="eyebrow hero-eyebrow">{wedding.title}</p>
         <p className="hero-intro">Together with our families,</p>
         <h1>
-          <span>{wedding.couple.partnerOne}</span>
-          <small>&amp;</small>
-          <span>{wedding.couple.partnerTwo}</span>
+          <span>{wedding.couple.partnerOne} & {wedding.couple.partnerTwo}</span>
         </h1>
         <div className="hero-rule" />
         <p className="hero-date">{wedding.date} · {wedding.time}</p>
