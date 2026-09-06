@@ -43,24 +43,12 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-width: 320px;
-  background-color: #1b0610;
-  /* background-image: url("/silk%20try.jpg"); */
-  background-image: url("/burgundysilk2.jpg");
-  background-size: cover;
-  background-position: center;
+  background:
+    radial-gradient(circle at 25% 30%, rgba(130, 39, 64, .55), transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(75, 11, 30, .7), transparent 45%),
+    linear-gradient(135deg, #1b1014 0%, #571526 48%, #100d0f 100%);
   background-attachment: fixed;
 }
-
-/* body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at 25% 30%, rgba(130, 39, 64, .88), transparent 45%),
-    radial-gradient(circle at 80% 70%, rgba(75, 11, 30, .92), transparent 45%),
-    linear-gradient(135deg, rgba(27, 16, 20, .5) 0%, rgba(87, 21, 38, .45) 48%, rgba(16, 13, 15, .55) 100%);
-  pointer-events: none;
-} */
 
 button, input, select, textarea { font: inherit; }
 
@@ -285,9 +273,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .section-heading p { margin: 18px auto 0; color: var(--muted); line-height: 1.7; white-space: pre-line; }
 
-.details-section { color: var(--ink); }
+.details-section { color: white; }
+.details-section .eyebrow { color: #d5a6b0; }
+.details-section .section-heading p { color: #b7adaf; }
 .details-grid { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); }
-.detail-card { position: relative; min-height: 230px; padding: 38px; background: var(--cream); }
+.detail-card { position: relative; min-height: 230px; padding: 38px; background: #f5ebe1; color: var(--ink); border: 1px solid rgba(212, 175, 106, .35); }
 .detail-number { color: var(--burgundy-light); font-size: .7rem; letter-spacing: .15em; }
 .detail-card h3 { margin: 30px 0 10px; font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 600; }
 .detail-card p { margin: 0 0 6px; font-weight: 600; }
@@ -307,8 +297,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .timeline-content h3 { margin: 0 0 8px; font-family: "Cormorant Garamond", serif; font-size: 1.9rem; font-weight: 500; }
 .timeline-content p { margin: 0; color: #a99da0; line-height: 1.6; }
 
-.location-section { color: var(--ink); }
-.location-card { max-width: 1050px; margin: auto; display: grid; grid-template-columns: 1.2fr .8fr; background: white; box-shadow: var(--shadow); }
+.location-section { color: white; }
+.location-section .section-heading .eyebrow { color: #d5a6b0; }
+.location-section .section-heading p { color: #b7adaf; }
+.location-card { max-width: 1050px; margin: auto; display: grid; grid-template-columns: 1.2fr .8fr; background: #f5ebe1; color: var(--ink); border: 1px solid rgba(212, 175, 106, .35); box-shadow: var(--shadow); }
 .map-container {
   min-height: 430px;
   overflow: hidden;
@@ -332,7 +324,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .countdown-section {
   padding: 100px 7vw;
-  color: var(--ink);
+  color: white;
   text-align: center;
   margin: 48px auto;
   max-width: 1300px;
@@ -346,16 +338,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
     inset 0 1px 0 rgba(255, 255, 255, .5),
     inset 0 0 40px rgba(255, 255, 255, .05);
 }
-.countdown-section .eyebrow { color: #8b3046; }
+.countdown-section .eyebrow { color: #d5a6b0; }
 .countdown-section h2 { margin: 0 0 40px; font-family: "Cormorant Garamond", serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 500; }
 .countdown-grid { max-width: 700px; margin: auto; display: grid; grid-template-columns: repeat(4, 1fr); }
 .countdown-item { padding: 20px; border-right: 1px solid rgba(255,255,255,.18); }
 .countdown-item:last-child { border-right: 0; }
 .countdown-item strong { display: block; font-family: "Cormorant Garamond", serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 500; }
-.countdown-item span { color: #8b3046; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; }
+.countdown-item span { color: #d5a6b0; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; }
 
-.rsvp-section { color: var(--ink); }
-.rsvp-form { max-width: 720px; margin: auto; padding: 48px; background: white; box-shadow: var(--shadow); }
+.rsvp-section { color: white; }
+.rsvp-section .eyebrow { color: #d5a6b0; }
+.rsvp-section .section-heading p { color: #b7adaf; }
+.rsvp-form { max-width: 720px; margin: auto; padding: 48px; background: #f5ebe1; color: var(--ink); border: 1px solid rgba(212, 175, 106, .35); box-shadow: var(--shadow); }
 .rsvp-form label, .rsvp-form fieldset { display: block; margin: 0 0 26px; }
 .rsvp-form fieldset { padding: 0; border: 0; }
 .rsvp-form legend, .rsvp-form label > span { display: block; margin-bottom: 10px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; }
@@ -377,7 +371,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .choice.selected span { color: var(--burgundy); border-color: var(--burgundy); background: #fbf1f4; }
 .form-error { margin: -5px 0 20px; color: var(--danger); font-size: .82rem; }
 
-.confirmation-card { max-width: 650px; margin: auto; padding: 55px; text-align: center; background: white; box-shadow: var(--shadow); }
+.confirmation-card { max-width: 650px; margin: auto; padding: 55px; text-align: center; background: #f5ebe1; color: var(--ink); border: 1px solid rgba(212, 175, 106, .35); box-shadow: var(--shadow); }
 .confirmation-mark { width: 50px; height: 50px; margin: 0 auto 20px; display: grid; place-items: center; color: white; background: var(--burgundy); border-radius: 50%; }
 .confirmation-card h3 { margin: 0 0 10px; font-family: "Cormorant Garamond", serif; font-size: 2.4rem; font-weight: 500; }
 .confirmation-card p { margin: 8px 0; color: var(--muted); line-height: 1.6; }
@@ -385,6 +379,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .gallery-section { color: white; }
 .gallery-section .eyebrow { color: #d5a6b0; }
+.gallery-section .section-heading p { color: white; }
+
+.details-section h2,
+.dark-section h2,
+.location-section h2,
+.rsvp-section h2,
+.countdown-section h2,
+.gallery-section h2,
+.quote {
+  background: linear-gradient(135deg, #6b4a1a 0%, #d4af6a 25%, #fdf0c8 50%, #d4af6a 75%, #6b4a1a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .35));
+}
 .gallery-grid { max-width: 1100px; margin: auto; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(4, 260px); gap: 12px; }
 .gallery-card {
   position: relative;
@@ -448,7 +458,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .message-inner { max-width: 760px; margin: auto; }
 .ornament { color: #d5a6b0; }
-.quote { margin: 25px 0; font-family: "Cormorant Garamond", serif; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 1; }
+.quote {
+  margin: 25px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1;
+}
 .message-inner > p:not(.quote) { color: #b7adaf; line-height: 1.8; }
 .signature { margin-top: 40px; display: flex; justify-content: center; align-items: center; gap: 10px; font-family: "Cormorant Garamond", serif; font-size: 1.7rem; }
 .signature small { color: #d5a6b0; }
