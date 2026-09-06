@@ -3,12 +3,13 @@ import flowerLeft from "../assets/1.png";
 import flowerRight from "../assets/2.png";
 import logo from "../assets/logo.png";
 
-export default function Envelope({ wedding, onOpen }) {
+export default function Envelope({ wedding, onOpen, onSealTap }) {
   const [open, setOpen] = useState(false);
 
   function handleOpen() {
     if (open) return;
     setOpen(true);
+    onSealTap?.();
     setTimeout(onOpen, 1900);
   }
 

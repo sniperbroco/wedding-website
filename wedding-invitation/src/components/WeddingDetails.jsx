@@ -25,7 +25,14 @@ export default function WeddingDetails({ wedding }) {
           <span className="detail-number">03</span>
           <h3>Dress Code</h3>
           <p>Elegant &amp; Formal</p>
-          <span>Burgundy, black &amp; timeless neutrals</span>
+          <span className="detail-caption">Burgundy, black &amp; timeless neutrals</span>
+          <div className="palette">
+            <span className="palette-dot" style={{ background: "#f1e7d8" }} title="Vanilla Silk" />
+            <span className="palette-dot" style={{ background: "#d8c7b2" }} title="Alpine Oat" />
+            <span className="palette-dot" style={{ background: "#a89a8c" }} title="Warm Greige" />
+            <span className="palette-dot" style={{ background: "#5a161c" }} title="Cherry Velvet" />
+            <span className="palette-dot" style={{ background: "#280a0e" }} title="Bordeaux Noir" />
+          </div>
         </article>
       </div>
     </section>

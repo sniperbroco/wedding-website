@@ -115,7 +115,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-content {
   position: relative;
   z-index: 1;
-  width: min(900px, 88%);
+  width: min(1200px, 92%);
   text-align: center;
 }
 
@@ -142,9 +142,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
   align-items: baseline;
   gap: 1rem;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(10rem, 15vw, 20rem);
+  font-size: clamp(10rem, 15vw, 14rem);
   font-weight: 500;
-  line-height: .82;
+  line-height: 1.3;
 }
 
 .hero h1 span,
@@ -159,6 +159,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero h1 span {
   font-family: "Parfumerie Script Decorative", sans-serif;
+  padding: 0 .25em;
 }
 
 .hero h1 #and {
@@ -210,6 +211,25 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes scroll-hint-bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(6px); }
+}
+
+.music-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 50;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .45);
+  backdrop-filter: blur(4px);
+  color: white;
+  font: inherit;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 @keyframes scroll-hint-fade {
@@ -282,6 +302,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .detail-card h3 { margin: 30px 0 10px; font-family: "Cormorant Garamond", serif; font-size: 2rem; font-weight: 600; }
 .detail-card p { margin: 0 0 6px; font-weight: 600; }
 .detail-card > span:last-child { color: var(--muted); font-size: .82rem; line-height: 1.5; }
+.detail-card .detail-caption { display: block; color: var(--muted); font-size: .82rem; line-height: 1.5; }
+
+.palette { display: flex; gap: 8px; margin-top: 16px; }
+.palette-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+}
 
 .dark-section { color: white; }
 .dark-section .section-heading p { color: #b7adaf; }
@@ -377,6 +407,26 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .confirmation-card p { margin: 8px 0; color: var(--muted); line-height: 1.6; }
 .small-note { font-size: .78rem; }
 
+.gift-section { color: white; }
+.gift-section .eyebrow { color: #d5a6b0; }
+.gift-section .section-heading p { color: #b7adaf; }
+.qr-placeholder {
+  width: 190px;
+  height: 190px;
+  margin: 10px auto 0;
+  display: grid;
+  place-items: center;
+  background:
+    repeating-conic-gradient(rgba(255, 255, 255, .12) 0% 25%, transparent 0% 50%) 0 0 / 24px 24px;
+  border: 1px dashed rgba(255, 255, 255, .35);
+  border-radius: 8px;
+  color: #d5a6b0;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
 .gallery-section { color: white; }
 .gallery-section .eyebrow { color: #d5a6b0; }
 .gallery-section .section-heading p { color: white; }
@@ -385,6 +435,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .dark-section h2,
 .location-section h2,
 .rsvp-section h2,
+.gift-section h2,
 .countdown-section h2,
 .gallery-section h2,
 .quote {
@@ -825,6 +876,7 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
+  .section, .countdown-section, .message-section { margin: 40px 20px; }
   .details-grid { grid-template-columns: 1fr; }
   .location-card { grid-template-columns: 1fr; }
   .map-placeholder { min-height: 300px; }
@@ -835,6 +887,7 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
 
 @media (max-width: 600px) {
   .navbar { padding: 18px 5vw; }
+  .section, .countdown-section, .message-section { margin: 36px 22px; border-radius: 20px; }
   .hero::before { inset: 4%; }
   .hero h1 { font-size: clamp(6rem, 30vw, 14rem); margin-top:4rem; margin-bottom: 8rem; flex-direction: column; align-items: center; gap: 0; }
   .hero h1 #and { font-size: .22em; margin: 0.2rem; }
@@ -856,6 +909,7 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
   .detail-card { padding: 34px 24px 40px; }
   .detail-card p { font-size: .95rem; }
   .detail-card > span:last-child { font-size: .76rem; }
+  .detail-card .detail-caption { font-size: .76rem; }
   .location-info { padding: 40px 28px; }
   .location-info p { font-size: .92rem; }
   .hero-guest { font-size: .82rem; margin: 28px auto 34px; }
