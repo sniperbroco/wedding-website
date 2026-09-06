@@ -1,30 +1,48 @@
 import SectionHeading from "./SectionHeading";
+import photo0 from "../assets/photos/Unknown-11 copy.jpg";
 import photo1 from "../assets/photos/Unknown-11.jpg";
 import photo2 from "../assets/photos/Unknown-12.jpg";
 import photo3 from "../assets/photos/Unknown-13.jpg";
 import photo4 from "../assets/photos/Unknown-14.jpg";
-import photo5 from "../assets/photos/Unknown-15.jpg";
+import photo7 from "../assets/photos/Unknown-15.jpg";
 import photo6 from "../assets/photos/Unknown-16.jpg";
-import photo7 from "../assets/photos/Unknown-17.jpg";
+import photo5 from "../assets/photos/Unknown-17.jpg";
 
 const galleryItems = [
-  { type: "photo", src: photo1, className: "gallery-tall" },
+  { type: "photo", src: photo0, className: "gallery-pin-col1-top" },
+  { type: "photo", src: photo1, className: "", imgPosition: "center 20%" },
   { type: "photo", src: photo2, className: "" },
   { type: "photo", src: photo3, className: "" },
-  { type: "photo", src: photo4, className: "gallery-wide" },
-  { type: "photo", src: photo5, className: "", imgPosition: "center 35%" },
-  { type: "photo", src: photo6, className: "gallery-tall" },
-  { type: "photo", src: photo7, className: "" },
-  {
-    type: "quote",
-    text: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.",
-    attribution: "",
-  },
+  { type: "photo", src: photo4, className: "gallery-pin-row3-left" },
+  { type: "photo", src: photo7, className: "gallery-pin-col3-bottom" },
+  { type: "photo", src: photo6, className: "" },
+  { type: "photo", src: photo5, className: "", imgPosition: "center 55%" },
   {
     type: "quote",
     text: "From two teenagers to partners for life — this is only the beginning.",
   },
 ];
+
+function GalleryCard({ item, index }) {
+  if (item.type === "quote") {
+    return (
+      <div className="gallery-card gallery-quote">
+        <span className="gallery-quote-mark">&ldquo;</span>
+        <p>{item.text}</p>
+        {item.attribution && <span className="gallery-quote-attribution">{item.attribution}</span>}
+      </div>
+    );
+  }
+  return (
+    <div className={`gallery-card ${item.className}`}>
+      <img
+        src={item.src}
+        alt={`Christine and Lence memory ${index + 1}`}
+        style={item.imgPosition ? { objectPosition: item.imgPosition } : undefined}
+      />
+    </div>
+  );
+}
 
 export default function Gallery() {
   return (
@@ -45,23 +63,9 @@ export default function Gallery() {
         From that first “yes” to forever, their story continues. 🤍`}
       />
       <div className="gallery-grid">
-        {galleryItems.map((item, index) =>
-          item.type === "quote" ? (
-            <div className="gallery-card gallery-quote" key={item.text}>
-              <span className="gallery-quote-mark">&ldquo;</span>
-              <p>{item.text}</p>
-              {item.attribution && <span className="gallery-quote-attribution">{item.attribution}</span>}
-            </div>
-          ) : (
-            <div className={`gallery-card ${item.className}`} key={item.src}>
-              <img
-                src={item.src}
-                alt={`Christine and Lence memory ${index + 1}`}
-                style={item.imgPosition ? { objectPosition: item.imgPosition } : undefined}
-              />
-            </div>
-          )
-        )}
+        {galleryItems.map((item, index) => (
+          <GalleryCard item={item} index={index} key={item.src ?? item.text} />
+        ))}
       </div>
     </section>
   );

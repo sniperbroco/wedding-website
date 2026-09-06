@@ -9,6 +9,7 @@ import RSVPSection from "../components/RSVPSection";
 import Gallery from "../components/Gallery";
 import Message from "../components/Message";
 import Envelope from "../components/Envelope";
+import ScrollHint from "../components/ScrollHint";
 import { wedding } from "../data/wedding";
 import { getInvitation } from "../services/weddingApi";
 
@@ -55,6 +56,7 @@ export default function WeddingInvitation() {
     content = (
       <>
         <Navbar />
+        <ScrollHint />
         <main>
           <Hero wedding={wedding} invitation={invitation} />
           <Countdown target={wedding.dateTime} />
