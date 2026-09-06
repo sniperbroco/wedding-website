@@ -6,7 +6,7 @@ export const wedding = {
   },
   date: "October 8, 2026",
   dateTime: "2026-10-08T15:00:00+08:00",
-  time: "3:00 PM",
+  time: "12:00 NN",
   venue: "The Cozy Calle",
   address: "Brgy. East Awang, Calbayog City, Samar",
   mapsUrl: "https://maps.app.goo.gl/uTDdawQj7ZGD9h3x9",
@@ -14,8 +14,8 @@ export const wedding = {
   
   theme: "Burgundy and Black Elegant",
   schedule: [
-    { time: "3:00 PM", title: "Civil Wedding Ceremony", description: "An intimate celebration of our union." },
-    { time: "4:00 PM", title: "Reception", description: "A few moments to celebrate with our loved ones." },
+    { time: "9:00 AM", title: "Civil Wedding Ceremony", description: "An intimate celebration of our union." },
+    { time: "12:00 NN", title: "Reception", description: "A few moments to celebrate with our loved ones." },
   ],
   message: "With grateful hearts, we invite you to celebrate this intimate chapter of our lives with us.",
   quote: "Two lives, one promise, and a lifetime to go.",
