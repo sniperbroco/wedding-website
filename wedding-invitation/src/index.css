@@ -901,8 +901,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 .loading-screen, .not-found { min-height: 100svh; display: grid; place-content: center; place-items: center; text-align: center; padding: 30px; }
-.not-found h1 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 4rem; font-weight: 500; }
-.not-found p { max-width: 500px; color: var(--muted); line-height: 1.7; }
+.not-found { color: white; }
+.not-found .eyebrow { color: #e6c9ce; }
+.not-found h1 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 4rem; font-weight: 500; color: white; }
+.not-found p { max-width: 500px; color: #d8adb7; line-height: 1.7; }
 
 .admin-page { min-height: 100vh; padding: 60px 5vw; background: #f5f1ee; }
 .admin-header { max-width: 1250px; margin: 0 auto 40px; display: flex; justify-content: space-between; align-items: end; gap: 20px; }
@@ -949,14 +951,23 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-rows: 240px; }
   .gallery-pin-col1-top, .gallery-pin-row3-left, .gallery-pin-col3-bottom { grid-column: auto; grid-row: auto; }
+  .gallery-card.gallery-pin-col1-top img { object-position: center 30%; }
 }
 
 @media (max-width: 600px) {
   .navbar { padding: 18px 5vw; }
   .section, .countdown-section, .message-section { margin: 36px 22px; border-radius: 20px; }
   .hero::before { inset: 4%; }
-  .hero h1 { font-size: clamp(6rem, 30vw, 14rem); flex-direction: column; align-items: center; gap: 0; }
+  .hero-intro { margin: 0; }
+  .hero-rule {margin: 0 auto; margin-bottom:15px; width: 30%; }
+  .hero h1 { font-size: clamp(6rem, 15vw, 8rem); flex-direction: column; align-items: center; gap: 0; line-height: 0.9; }
   .hero h1 #and { font-size: .22em; margin: 0.2rem; }
+  /* Christine */
+  .hero h1 span:first-of-type { margin-top: 0; margin-bottom: 1rem; padding-right:0; padding-top: 1.5rem; }
+  /* Lence */
+  .hero h1 span:last-of-type { margin-top: 1rem; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 1.5rem; }
+  .hero-date { font-size: 0.7rem; }
+  .hero-guest { font-size: .82rem; margin-top: .5rem; margin-bottom: 2rem; }
   .section { padding: 90px 5vw; }
   .section-heading { margin-bottom: 56px; }
   .section-heading p { font-size: .85rem; }
@@ -978,7 +989,6 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
   .detail-card .detail-caption { font-size: .76rem; }
   .location-info { padding: 40px 28px; }
   .location-info p { font-size: .92rem; }
-  .hero-guest { font-size: .82rem; margin: 28px auto 34px; }
   .gallery-grid { grid-template-columns: 1fr; grid-template-rows: none; grid-auto-rows: min-content; gap: 16px; }
   .gallery-pin-col1-top, .gallery-pin-row3-left, .gallery-pin-col3-bottom { grid-column: auto; grid-row: auto; }
   .gallery-card { height: 260px; }

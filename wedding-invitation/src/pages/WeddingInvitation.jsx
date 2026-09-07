@@ -41,6 +41,20 @@ export default function WeddingInvitation() {
     };
   }, [showEnvelope]);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    function handleTimeUpdate() {
+      if (audio.currentTime >= 278) {
+        audio.currentTime = 47;
+      }
+    }
+
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    return () => audio.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
+
   function handleSealTap() {
     const audio = audioRef.current;
     if (!audio) return;
@@ -113,7 +127,7 @@ export default function WeddingInvitation() {
         <Envelope wedding={wedding} onOpen={handleEnvelopeOpen} onSealTap={handleSealTap} />
       )}
       {content}
-      <audio ref={audioRef} src={song} preload="auto" loop muted={muted} />
+      <audio ref={audioRef} src={song} preload="auto" muted={muted} />
       {musicPlaying && (
         <button
           type="button"
