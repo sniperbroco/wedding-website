@@ -12,7 +12,7 @@ const galleryItems = [
   { type: "photo", src: photo0, className: "gallery-pin-col1-top" },
   { type: "photo", src: photo1, className: "", imgPosition: "center 20%" },
   { type: "photo", src: photo2, className: "" },
-  { type: "photo", src: photo3, className: "" },
+  { type: "photo", src: photo3, className: "", imgPosition: "center 65%" },
   { type: "photo", src: photo4, className: "gallery-pin-row3-left" },
   { type: "photo", src: photo7, className: "gallery-pin-col3-bottom" },
   { type: "photo", src: photo6, className: "" },
