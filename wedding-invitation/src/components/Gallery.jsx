@@ -2,7 +2,7 @@ import SectionHeading from "./SectionHeading";
 import photo0 from "../assets/photos/Unknown-11 copy.jpg";
 import photo1 from "../assets/photos/Unknown-11.jpg";
 import photo2 from "../assets/photos/Unknown-12.jpg";
-import photo3 from "../assets/photos/Unknown-13.jpg";
+import photo3 from "../assets/photos/Unknown-10.jpg";
 import photo4 from "../assets/photos/Unknown-14.jpg";
 import photo7 from "../assets/photos/Unknown-15.jpg";
 import photo6 from "../assets/photos/Unknown-16.jpg";
