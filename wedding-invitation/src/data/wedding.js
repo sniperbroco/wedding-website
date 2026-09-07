@@ -5,7 +5,7 @@ export const wedding = {
     partnerTwo: " Lence",
   },
   date: "October 8, 2026",
-  dateTime: "2026-10-08T15:00:00+08:00",
+  dateTime: "2026-10-08T12:00:00+08:00",
   time: "12:00 NN",
   venue: "The Cozy Calle",
   address: "Brgy. East Awang, Calbayog City, Samar",
