@@ -59,6 +59,67 @@ export async function submitRsvp(rsvp) {
 }
 
 /**
+ * Create a new invitation.
+ *
+ * Used by the admin dashboard.
+ */
+export async function createInvite({ guestName, maxGuests }) {
+  const data = await request(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify({
+      action: "createInvite",
+      guestName,
+      maxGuests,
+    }),
+  });
+
+  return data.invitation;
+}
+
+/**
+ * Update an existing invitation's guest name / max guests.
+ *
+ * Used by the admin dashboard.
+ */
+export async function updateInvite({ inviteId, guestName, maxGuests }) {
+  const data = await request(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify({
+      action: "updateInvite",
+      inviteId,
+      guestName,
+      maxGuests,
+    }),
+  });
+
+  return data.invitation;
+}
+
+/**
+ * Delete an invitation (and its RSVP, if any).
+ *
+ * Used by the admin dashboard.
+ */
+export async function deleteInvite(inviteId) {
+  await request(API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain;charset=utf-8",
+    },
+    body: JSON.stringify({
+      action: "deleteInvite",
+      inviteId,
+    }),
+  });
+}
+
+/**
  * Get all invitations + RSVP information.
  *
  * Used by the admin dashboard.

@@ -911,6 +911,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .admin-header h1 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 500; line-height: .9; }
 .admin-header p { margin: 15px 0 0; color: var(--muted); }
 .admin-header .eyebrow { margin-bottom: 8px; }
+.add-guest-panel { max-width: 1250px; margin: auto auto 25px; padding: 20px; background: white; border: 1px solid var(--line); }
+.add-guest-panel h2 { margin: 0 0 16px; font-family: "Cormorant Garamond", serif; font-size: 1.4rem; font-weight: 500; }
+.add-guest-form { display: flex; align-items: end; gap: 16px; flex-wrap: wrap; }
+.add-guest-form label { display: flex; flex-direction: column; gap: 6px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.add-guest-form input { padding: 12px 15px; border: 1px solid var(--line); outline: none; font-size: .85rem; }
+.add-guest-form input[type="number"] { width: 100px; }
+.invite-result { margin-top: 18px; padding: 16px; background: #f5eee1; border: 1px solid var(--line); font-size: .85rem; }
+.invite-result .invite-link-row { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+.invite-result code { padding: 6px 10px; background: white; border: 1px solid var(--line); font-size: .82rem; word-break: break-all; }
+
 .stats-grid { max-width: 1250px; margin: auto auto 25px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
 .stat-card { padding: 22px; background: white; border: 1px solid var(--line); }
 .stat-card span { display: block; margin-bottom: 12px; color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -935,6 +945,15 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
 .status-declined { color: var(--danger); background: #f7e9ec; }
 .status-pending { color: #7a6240; background: #f5eee1; }
 .empty-state { padding: 50px; text-align: center; color: var(--muted); }
+.table-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.table-actions .button { display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; font-size: .68rem; }
+.btn-icon { width: 14px; height: 14px; flex-shrink: 0; }
+.table-actions input { padding: 8px 10px; border: 1px solid var(--line); outline: none; font-size: .85rem; }
+.table-actions input[type="number"] { width: 70px; }
+.table-actions .form-error { width: 100%; margin: 4px 0 0; }
+.button-danger { color: var(--danger); background: transparent; border-color: var(--danger); }
+td input[type="text"] { padding: 8px 10px; border: 1px solid var(--line); outline: none; font-size: .85rem; width: 100%; }
+td input[type="number"] { padding: 8px 10px; border: 1px solid var(--line); outline: none; font-size: .85rem; width: 70px; }
 
 @media (max-width: 900px) {
   .nav-links { display: none; }
@@ -1014,6 +1033,10 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
   .stat-card strong { font-size: 2.1rem; }
   .tracker-toolbar { flex-direction: column; }
   .tracker-toolbar input { min-width: 0; width: 100%; }
+  .add-guest-form { flex-direction: column; align-items: stretch; }
+  .table-actions .btn-label { display: none; }
+  .table-actions .button { padding: 8px; }
+  .btn-icon { width: 16px; height: 16px; }
 
   .message-section { padding: 90px 6vw; }
   .quote { line-height: 1.1; }
