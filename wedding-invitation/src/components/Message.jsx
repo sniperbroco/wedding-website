@@ -2,7 +2,7 @@ export default function Message({ wedding }) {
   return (
     <section className="message-section">
       <div className="message-inner">
-        <span className="ornament">✦</span>
+        <span className="ornament">♥</span>
         <p className="quote">“{wedding.quote}”</p>
         <p>{wedding.message}</p>
         <div className="signature">

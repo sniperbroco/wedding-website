@@ -134,13 +134,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .hero-intro { margin: 0 0 18px; opacity: .85; font-size: .9rem; }
 
 .hero h1 {
-  margin-top: 0rem;
-  margin-bottom: 0rem;
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
   align-items: baseline;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0;
+  margin: 0;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(10rem, 15vw, 14rem);
   font-weight: 500;
@@ -149,6 +149,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero h1 span,
 .hero h1 #and {
+  display: inline-block;
+  padding: 0;
+  position: relative;
   background: linear-gradient(135deg, #6b4a1a 0%, #d4af6a 25%, #fdf0c8 50%, #d4af6a 75%, #6b4a1a 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -159,14 +162,25 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .hero h1 span {
   font-family: "Parfumerie Script Decorative", sans-serif;
-  padding: 0 .25em;
+}
+
+/* Christine */
+.hero h1 span:first-of-type {
+  padding-left: 0;
+  padding-right: 0.3rem;
+}
+
+/* Lence */
+.hero h1 span:last-of-type {
+  padding-left: 0.7rem;
+  padding-right: 0;
 }
 
 .hero h1 #and {
   font-family: "Cormorant Garamond", serif;
   font-size: .3em;
-  margin: .2em 0;
   font-style: italic;
+  padding: 0.7rem;
 }
 
 .hero h1 small {
@@ -392,8 +406,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .rsvp-form textarea { resize: vertical; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 .attendance-options { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.choice { margin: 0 !important; }
-.choice input { position: absolute; opacity: 0; pointer-events: none; }
+.choice { position: relative; margin: 0 !important; }
+.choice input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; }
 .choice span {
   display: flex !important; align-items: center; justify-content: center; min-height: 52px; margin: 0 !important;
   border: 1px solid var(--line); cursor: pointer; text-align: center; font-size: .75rem !important;
@@ -414,17 +428,18 @@ button, a { -webkit-tap-highlight-color: transparent; }
   width: 190px;
   height: 190px;
   margin: 10px auto 0;
+  padding: 10px;
   display: grid;
   place-items: center;
-  background:
-    repeating-conic-gradient(rgba(255, 255, 255, .12) 0% 25%, transparent 0% 50%) 0 0 / 24px 24px;
-  border: 1px dashed rgba(255, 255, 255, .35);
+  background: #fff;
   border-radius: 8px;
-  color: #d5a6b0;
-  font-size: .78rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.qr-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .gallery-section { color: white; }
@@ -877,6 +892,12 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .section, .countdown-section, .message-section { margin: 40px 20px; }
+  .hero h1 { display: block; text-align: center; }
+  .hero h1 span,
+  .hero h1 #and { display: block; }
+  .hero h1 span:first-of-type { top: 0.2em; }
+  .hero h1 #and { top: -0.5em; }
+  .hero h1 span:last-of-type { top: -0.4em; }
   .details-grid { grid-template-columns: 1fr; }
   .location-card { grid-template-columns: 1fr; }
   .map-placeholder { min-height: 300px; }
@@ -889,7 +910,7 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
   .navbar { padding: 18px 5vw; }
   .section, .countdown-section, .message-section { margin: 36px 22px; border-radius: 20px; }
   .hero::before { inset: 4%; }
-  .hero h1 { font-size: clamp(6rem, 30vw, 14rem); margin-top:4rem; margin-bottom: 8rem; flex-direction: column; align-items: center; gap: 0; }
+  .hero h1 { font-size: clamp(6rem, 30vw, 14rem); flex-direction: column; align-items: center; gap: 0; }
   .hero h1 #and { font-size: .22em; margin: 0.2rem; }
   .section { padding: 90px 5vw; }
   .section-heading { margin-bottom: 56px; }

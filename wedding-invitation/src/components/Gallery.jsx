@@ -49,7 +49,7 @@ export default function Gallery() {
     <section className="section gallery-section" id="gallery">
       <SectionHeading
         eyebrow="How it began"
-        title="Our Story"
+        title="The Beginning of Forever"
         description={`Long before they dreamed of forever, they were just two teenagers who happened to meet during a Senior High School Drum and Lyre Corps competition.
 
         Their story began through practices, shared moments, and Lence’s efforts to win Christine’s heart. After all his persistence, Christine finally said yes—and that simple “yes” became the beginning of their journey together.

@@ -55,7 +55,7 @@ export default function Envelope({ wedding, onOpen, onSealTap }) {
           <div className="envelope-frame" />
 
           <div className="envelope-date">
-            <span className="ornament">✦</span>
+            <span className="ornament">♥</span>
             <p>{wedding.date}</p>
           </div>
 
