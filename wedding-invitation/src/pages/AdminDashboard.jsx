@@ -109,14 +109,15 @@ export default function AdminDashboard() {
                 <th>Guest</th>
                 <th>Attendance</th>
                 <th>Guests</th>
+                <th>Message</th>
                 <th>RSVP Date</th>
               </tr>
             </thead>
             <tbody>
               {loading ? (
-                <tr><td colSpan="4" className="empty-state">Loading...</td></tr>
+                <tr><td colSpan="5" className="empty-state">Loading...</td></tr>
               ) : filtered.length === 0 ? (
-                <tr><td colSpan="4" className="empty-state">No guests found.</td></tr>
+                <tr><td colSpan="5" className="empty-state">No guests found.</td></tr>
               ) : (
                 filtered.map((rsvp) => (
                   <tr key={rsvp.inviteId}>
@@ -131,6 +132,7 @@ export default function AdminDashboard() {
                       </span>
                     </td>
                     <td>{rsvp.guestCount}</td>
+                    <td>{rsvp.message || "—"}</td>
                     <td>{formatDate(rsvp.submittedAt)}</td>
                   </tr>
                 ))
