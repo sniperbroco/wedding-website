@@ -3,12 +3,10 @@ import { useEffect, useState } from "react";
 const STORAGE_KEY = "scrollHintSeen";
 
 export default function ScrollHint() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(() => !localStorage.getItem(STORAGE_KEY));
 
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return;
-
-    setVisible(true);
+    if (!visible) return;
 
     function dismiss() {
       setVisible(false);
@@ -17,7 +15,7 @@ export default function ScrollHint() {
 
     window.addEventListener("scroll", dismiss, { once: true, passive: true });
     return () => window.removeEventListener("scroll", dismiss);
-  }, []);
+  }, [visible]);
 
   if (!visible) return null;
 

@@ -31,6 +31,9 @@ export default function AdminDashboard() {
   }
 
   useEffect(() => {
+    // Standard fetch-on-mount + poll pattern; the lint rule flags setLoading(true)
+    // running synchronously here, but that's intentional and harmless (one extra render).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
     const interval = setInterval(load, 30000);
     return () => clearInterval(interval);

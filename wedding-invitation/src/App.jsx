@@ -5,10 +5,11 @@ import AdminDashboard from "./pages/AdminDashboard";
 
 export default function App() {
   const path = window.location.pathname.toLowerCase();
+  const isAdmin = path === "/admin" || path.startsWith("/admin/");
 
   return (
     <>
-      <WeddingInvitation />
+      {isAdmin ? <AdminDashboard /> : <WeddingInvitation />}
       <Analytics />
       <SpeedInsights />
     </>

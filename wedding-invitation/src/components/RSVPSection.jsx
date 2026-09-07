@@ -9,6 +9,7 @@ export default function RSVPSection({ invitation }) {
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
   const [state, setState] = useState({ status: "idle", message: "" });
+  const [closed] = useState(() => Date.now() > new Date("2026-09-30T23:59:59+08:00"));
 
   if (!invitation) return null;
 
@@ -24,9 +25,6 @@ export default function RSVPSection({ invitation }) {
       </section>
     );
   }
-
-  const deadline = new Date("2026-09-30T23:59:59+08:00");
-  const closed = Date.now() > deadline;
 
   async function handleSubmit(event) {
     event.preventDefault();
