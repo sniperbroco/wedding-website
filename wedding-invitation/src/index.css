@@ -38,16 +38,61 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background: #1c1418;
+  width: 100%;
+  max-width: 100%;
+}
 
 body {
-  background-attachment: fixed;
-  background-image: radial-gradient(circle at 25% 30%, rgba(150, 50, 78, .75), transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(95, 20, 42, .85), transparent 55%),
-    linear-gradient(135deg, #2a1a20 0%, #6b1c30 48%, #1c1418 100%);
-  background-size: cover;
-  background-position: center center;
+  margin: 0;
+  background: transparent;
+  min-height: 100%;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* Fixed wedding background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 25% 30%,
+      rgba(150, 50, 78, .75),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(95, 20, 42, .85),
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      #2a1a20 0%,
+      #6b1c30 48%,
+      #1c1418 100%
+    );
+
+  /* Important: don't use cover */
+  background-size: 100% 100%;
+  background-position: center;
   background-repeat: no-repeat;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 button, input, select, textarea { font: inherit; }
@@ -977,4 +1022,97 @@ td small { display: block; margin-top: 3px; color: #a69a9d; font-size: .68rem; }
   .envelope-scene { gap: 36px; }
   .envelope-invite-heading { gap: 14px; }
   .envelope-hint { font-size: .8rem; }
+}
+
+/* =========================================
+   MOBILE / IPHONE
+   ========================================= */
+
+@media screen and (max-width: 600px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .brand-logo {
+    height: 46px;
+    max-width: 160px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: 100svh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    width: 100%;
+    font-size: clamp(5rem, 27vw, 9rem);
+    line-height: .9;
+  }
+
+  .hero h1 span,
+  .hero h1 #and {
+    display: block;
+  }
+
+  .hero h1 #and {
+    font-size: .22em;
+    margin: .2rem;
+  }
+
+  .section,
+  .countdown-section,
+  .message-section {
+    width: calc(100% - 40px);
+    max-width: none;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .scroll-hint {
+    bottom: 18px;
+    font-size: .62rem;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 14px 20px;
+  }
+
+  .music-toggle {
+    position: fixed;
+    right: 14px;
+    bottom: 18px;
+    max-width: calc(100vw - 28px);
+  }
 }
