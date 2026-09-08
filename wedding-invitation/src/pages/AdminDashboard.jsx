@@ -170,11 +170,11 @@ export default function AdminDashboard() {
     const pending = rsvps.filter((rsvp) => rsvp.attendance === "pending");
 
     return {
-      total: rsvps.length,
       responded: attending.length + declined.length,
       attending: attending.length,
       declined: declined.length,
       pending: pending.length,
+      expectedGuests: rsvps.reduce((sum, rsvp) => sum + rsvp.maxGuests, 0),
       guests: attending.reduce((sum, rsvp) => sum + rsvp.guestCount, 0),
     };
   }, [rsvps]);
@@ -240,7 +240,7 @@ export default function AdminDashboard() {
       </section>
 
       <section className="stats-grid">
-        <div className="stat-card"><span>Total Invited</span><strong>{stats.total}</strong></div>
+        <div className="stat-card"><span>Total Expected Guests</span><strong>{stats.expectedGuests}</strong></div>
         <div className="stat-card"><span>Responded</span><strong>{stats.responded}</strong></div>
         <div className="stat-card"><span>Attending</span><strong>{stats.attending}</strong></div>
         <div className="stat-card"><span>Not Attending</span><strong>{stats.declined}</strong></div>
