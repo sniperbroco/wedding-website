@@ -57,11 +57,11 @@ export default function AdminDashboard() {
   const [createError, setCreateError] = useState("");
   const [createdInvite, setCreatedInvite] = useState(null);
 
-  async function load() {
-    setLoading(true);
+  async function load({ silent = false } = {}) {
+    if (!silent) setLoading(true);
     const data = await getRsvps();
     setRsvps(data);
-    setLoading(false);
+    if (!silent) setLoading(false);
   }
 
   async function handleCreateInvite(event) {
@@ -158,11 +158,9 @@ export default function AdminDashboard() {
   }
 
   useEffect(() => {
-    // Standard fetch-on-mount + poll pattern; the lint rule flags setLoading(true)
-    // running synchronously here, but that's intentional and harmless (one extra render).
     // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
-    const interval = setInterval(load, 30000);
+    const interval = setInterval(() => load({ silent: true }), 30000);
     return () => clearInterval(interval);
   }, []);
 
