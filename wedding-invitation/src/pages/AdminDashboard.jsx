@@ -174,7 +174,7 @@ export default function AdminDashboard() {
       attending: attending.length,
       declined: declined.length,
       pending: pending.length,
-      expectedGuests: rsvps.reduce((sum, rsvp) => sum + rsvp.maxGuests, 0),
+      expectedGuests: Math.round(rsvps.reduce((sum, rsvp) => sum + rsvp.maxGuests, 0)),
       guests: attending.reduce((sum, rsvp) => sum + rsvp.guestCount, 0),
     };
   }, [rsvps]);
